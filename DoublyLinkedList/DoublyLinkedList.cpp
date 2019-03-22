@@ -289,7 +289,7 @@ Node * removeSeveralElements(Node *ptr)
 	if (tmp != NULL)
 	{
 		short int i = 0;
-		while (tmp != NULL)
+		while (tmp != NULL) 
 		{
 			tmp->nodeIndex = firstElementPosition + i++;
 			tmp = tmp->next;
