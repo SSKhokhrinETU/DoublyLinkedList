@@ -46,10 +46,36 @@ Node * addElement(Node *ptr)
 	short int position = 0, newData = 0;
 
 	p = ptr;
-	cout << "Number of new element: ";
-	cin >> position;
-	cout << "Value of new element: ";
-	cin >> newData;
+	
+	
+	while (true)
+	{
+		system("cls");
+		cout << "Number of new element: ";
+		cin >> position;
+		if (cin.good())
+		{
+			cin.ignore(1000, '\n');
+			break;
+		}
+		cin.clear();
+		cin.ignore(1000, '\n');
+	}
+	
+	
+	while (true)
+	{
+		system("cls");
+		cout << "Value of new element: ";
+		cin >> newData;
+		if (cin.good())
+		{
+			cin.ignore(1000, '\n');
+			break;
+		}
+		cin.clear();
+		cin.ignore(1000, '\n');
+	}
 	if (position == 1)
 	{
 		tmp = ptr;
@@ -111,8 +137,21 @@ Node * removeNode(Node *ptr)
 	bool wrongNumber = false;
 
 	p = ptr;
-	cout << "Number of element to remove it: ";
-	cin >> position;
+	
+	
+	while (true)
+	{
+		system("cls");
+		cout << "Number of element to remove it: ";
+		cin >> position;
+		if (cin.good())
+		{
+			cin.ignore(1000, '\n');
+			break;
+		}
+		cin.clear();
+		cin.ignore(1000, '\n');
+	}
 	if (position < 1)
 	{
 		cout << "\nError: wrong number" << endl;
@@ -181,10 +220,36 @@ Node * removeSeveralElements(Node *ptr)
 
 	tmp = p = ptr;
 
-	cout << "Number of first element: ";
-	cin >> firstElementPosition;
-	cout << "\nNumber of second element: ";
-	cin >> secondElementPosition;
+	
+	
+	while (true)
+	{
+		system("cls");
+		cout << "Number of first element: ";
+		cin >> firstElementPosition;
+		if (cin.good())
+		{
+			cin.ignore(1000, '\n');
+			break;
+		}
+		cin.clear();
+		cin.ignore(1000, '\n');
+	}
+	
+	
+	while (true)
+	{
+		system("cls");
+		cout << "Number of second element: ";
+		cin >> secondElementPosition;
+		if (cin.good())
+		{
+			cin.ignore(1000, '\n');
+			break;
+		}
+		cin.clear();
+		cin.ignore(1000, '\n');
+	}
 
 	if ((firstElementPosition < 1) || (secondElementPosition < 1))
 	{
@@ -390,27 +455,7 @@ int main()
 	short int choose = 0, tempChoose = 0, arrowControl = NUM_1_KEY;
 	short int newData = 0;
 	Node *head;
-	//head = NULL;
-
-	//-------------
-	head = new Node();
-	head->nodeIndex = 1;
-	head->data = 12;
-	head->prev = NULL;
-	head->next = new Node();
-	head->next->nodeIndex = 2;
-	head->next->data = 23;
-	head->next->prev = head;
-	head->next->next = new Node();
-	head->next->next->nodeIndex = 3;
-	head->next->next->data = 34;
-	head->next->next->prev = head->next;
-	head->next->next->next = new Node();
-	head->next->next->next->nodeIndex = 4;
-	head->next->next->next->data = 45;
-	head->next->next->next->prev = head->next->next;
-	head->next->next->next->next = NULL;
-	//-------------
+	head = NULL;
 
 	displayList(head);
 	cout << '\n' << "Add element             <--";
@@ -454,8 +499,19 @@ int main()
 			case NUM_4_KEY:
 				if (head == NULL)
 				{
-					cout << "Value of first element: ";
-					cin >> newData;
+					while (true)
+					{
+						system("cls");
+						cout << "Value of first element: ";
+						cin >> newData;
+						if (cin.good())
+						{
+							cin.ignore(1000, '\n');
+							break;
+						}
+						cin.clear();
+						cin.ignore(1000, '\n');
+					}
 					head = addList(head, newData);
 					head->next = NULL;
 					head->prev = NULL;
